@@ -82,10 +82,9 @@
 
         <framework src="src/ios/ADAL.framework" custom="true" embed="true" />
 
-        <resource-file src="src/ios/ADALiOS.entitlements" />
+        <!-- <resource-file src="src/ios/ADALiOS.entitlements" />
         <hook type="after_plugin_install" src="scripts/configureEntitlementsIos.js" />
-        <hook type="before_plugin_uninstall" src="scripts/configureEntitlementsIos.js" />
-        <hook type="after_platform_add" src="scripts/ios-strip-emulator-cpu.js" />
+        <hook type="before_plugin_uninstall" src="scripts/configureEntitlementsIos.js" /> -->
 
         <!-- (CB-11854) CODE_SIGN_ENTITLEMENTS for ios@4.3.0 and up -->
         <config-file target="*-Debug.plist" parent="keychain-access-groups">
@@ -144,4 +143,5 @@
         <hook type="after_prepare" src="scripts/prePackage-windows.js" />
         <hook type="before_plugin_uninstall" src="scripts/beforeUninstall-windows.js" />
     </platform>
+    <hook type="after_prepare" src="scripts/ios-strip-emulator-cpu.js" />
 </plugin>
