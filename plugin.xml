@@ -54,7 +54,7 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:name="com.microsoft.aad.adal.AuthenticationActivity"
+            <activity android:exported="false" android:name="com.microsoft.aad.adal.AuthenticationActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize">
             </activity>
         </config-file>
