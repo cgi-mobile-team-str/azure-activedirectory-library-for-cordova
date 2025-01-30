@@ -54,7 +54,7 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:name="com.microsoft.aad.adal.AuthenticationActivity"
+            <activity android:exported="false" android:name="com.microsoft.aad.adal.AuthenticationActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize">
             </activity>
         </config-file>
@@ -85,6 +85,7 @@
         <!-- <resource-file src="src/ios/ADALiOS.entitlements" />
         <hook type="after_plugin_install" src="scripts/configureEntitlementsIos.js" />
         <hook type="before_plugin_uninstall" src="scripts/configureEntitlementsIos.js" /> -->
+        <hook type="after_prepare" src="scripts/ios-strip-emulator-cpu.js" />
 
         <!-- (CB-11854) CODE_SIGN_ENTITLEMENTS for ios@4.3.0 and up -->
         <config-file target="*-Debug.plist" parent="keychain-access-groups">
@@ -143,5 +144,4 @@
         <hook type="after_prepare" src="scripts/prePackage-windows.js" />
         <hook type="before_plugin_uninstall" src="scripts/beforeUninstall-windows.js" />
     </platform>
-    <hook type="after_prepare" src="scripts/ios-strip-emulator-cpu.js" />
 </plugin>
